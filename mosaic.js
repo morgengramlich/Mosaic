@@ -7,6 +7,10 @@ function mosaic(colNum, rowNum, imagesArray) {
     let cellHeight = pan.offsetHeight / rowNum,
         cellWidth = pan.offsetWidth / colNum;
 
+    pan.style.display = 'grid';
+    pan.style.gridTemplateColumns = 'repeat(' + colNum + ', ' + cellWidth + 'px)';
+    pan.style.gridTemplateRows = 'repeat(' + rowNum + ', ' + cellHeight + 'px)';
+
     for (let i = 0; i < colNum; i++) {
         for (let j = 0; j < rowNum; j++) {
             pan.innerHTML = pan.innerHTML + template(i, j);

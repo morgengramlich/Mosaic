@@ -1,5 +1,0 @@
-.mosaic {
-    display: grid;
-    grid-template-columns: repeat(5, 128px);
-    grid-template-rows: repeat(5, 96px);
-}
