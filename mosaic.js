@@ -25,13 +25,14 @@ function mosaic(colNum, rowNum, imagesArray) {
     }, 2000);
 
     function template(column, row) {
-        return '<div style="grid-column-start: '+ (column+1)
-            + '; grid-row-start: '+ (row+1)
-            + '; height: ' + cellHeight
-            + 'px; width: ' + cellWidth
-            + 'px; background-image: url(' + randomPhoto() + '); background-size: cover'
-            +'" id="m-el-' + column + '-'+ row
-            + '"/>';
+        return '<div '
+            +'style="grid-column-start: '+ (column+1) + '; '
+                + 'grid-row-start: '+ (row+1) + '; '
+                + 'height: ' + cellHeight + 'px; '
+                + 'width: ' + cellWidth + 'px; '
+                + 'background-image: url(' + randomPhoto() + '); background-size: cover"'
+            +'id="m-el-' + column + '-'+ row + '"'
+            +'/>';
     }
 
     function randomPhoto() {
