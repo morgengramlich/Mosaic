@@ -1,6 +1,6 @@
 'use strict';
 
-function mosaic(colNum, rowNum, imagesArray) {
+function mosaic(colNum, rowNum, imagesArray, interval = 2000) {
     let pan = document.getElementById('mosaic'),
         images = imagesArray;
 
@@ -22,7 +22,7 @@ function mosaic(colNum, rowNum, imagesArray) {
         col = Math.floor(Math.random() * colNum);
         row = Math.floor(Math.random() * rowNum);
         document.getElementById('m-el-' + col + '-'+ row).style.backgroundImage = 'url(' + randomPhoto() + ')';
-    }, 2000);
+    }, interval);
 
     function template(column, row) {
         return '<div '
