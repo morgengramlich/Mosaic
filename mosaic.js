@@ -1,7 +1,7 @@
 'use strict';
 
 function mosaic(colNum, rowNum, imagesArray) {
-    let pan = document.getElementById('photo-mosaic'),
+    let pan = document.getElementById('mosaic'),
         images = imagesArray;
 
     let cellHeight = pan.offsetHeight / rowNum,
