@@ -2,7 +2,7 @@
 Mosaic is a small JavaScript library which allows you to create a pane filled with changing images.
 
 ## Usage
-1. Add mosaic.js script to your html
+1. Include mosaic.js script in your page
 2. Call function ```mosaic(elementId, colsNum, rowsNum, imagesArray, interval)``` where:
    - ```elementId``` is the id of the pane elementId
    - ```colsNum``` is the number of columns in the pane
