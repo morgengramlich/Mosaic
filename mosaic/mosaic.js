@@ -13,7 +13,10 @@ function mosaic(elementId, colNum, rowNum, imagesArray, interval = 2000) {
 
     for (let i = 0; i < colNum; i++) {
         for (let j = 0; j < rowNum; j++) {
-            pan.innerHTML = pan.innerHTML + template(i, j);
+            let imgDiv = document.createElement('div');
+            imgDiv.setAttribute('id', 'm-el-' + i + '-'+ j);
+            applyStyleToGridElement(imgDiv, i, j);
+            pan.appendChild(imgDiv);
         }
     }
 
@@ -24,15 +27,13 @@ function mosaic(elementId, colNum, rowNum, imagesArray, interval = 2000) {
         document.getElementById('m-el-' + col + '-'+ row).style.backgroundImage = 'url(' + randomPhoto() + ')';
     }, interval);
 
-    function template(column, row) {
-        return '<div '
-            +'style="grid-column-start: '+ (column+1) + '; '
-                + 'grid-row-start: '+ (row+1) + '; '
-                + 'height: ' + cellHeight + 'px; '
-                + 'width: ' + cellWidth + 'px; '
-                + 'background-image: url(' + randomPhoto() + '); background-size: cover"'
-            +'id="m-el-' + column + '-'+ row + '"'
-            +'/>';
+    function applyStyleToGridElement(domElement, column, row) {
+        domElement.style.gridColumnStart = column+1;
+        domElement.style.gridRowStart = row+1;
+        domElement.style.height = cellHeight;
+        domElement.style.width = cellWidth;
+        domElement.style.backgroundImage = 'url(' + randomPhoto() + ')';
+        domElement.style.backgroundSize = 'cover';
     }
 
     function randomPhoto() {
